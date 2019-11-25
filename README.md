@@ -165,6 +165,26 @@ Example usage:
 }
 
 ```
+### Localizing iOS Settings.bundle
+
+The plugin can help to localize Settings.bundle entries. You have to add the .plist file yourself under the Settings.bundle. But then, the localizations can be added using the plugin.
+
+Example:
+
+```json
+{
+	"settings": {
+		"Root": {
+			"Group": "Group",
+			"Name": "Name",
+			"Core Information": "Core Information",
+			"Identifier": "Identifier"
+		}
+	}
+}
+```
+
+Under `settings`, add `Root` (for each plist file, this value has to match the `StringsTable` key). Under this, add the localization strings.
 
 ### Push notifications messages 
 
