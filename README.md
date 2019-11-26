@@ -122,6 +122,54 @@ zh-Hant.json
 }
 ```
 
+Android 7 added support for BCP 47 language codes (https://developer.android.com/guide/topics/resources/providing-resources.html#AlternativeResources).
+If you are not having to support earlier than that, you can use something like the following:
+
+zh-Hans.json (Android 7 and above)
+```json
+{
+	"locale": {
+		"ios": ["zh-Hans"],
+		"android": ["b+zh", "b+zh+Hans", "zh-rCN"]
+	},
+	"config_ios": {
+		"NSCameraUsageDescription": "扫描二维码",
+		"CFBundleDisplayName": "应用程序名称",
+		"CFBundleName": "应用程序名称"
+	},
+	"config_android": {
+		"app_name": "应用程序名称"
+	},
+	"app": {
+		"HAVE_MAIL_TITLE": "你收到了邮件",
+		"HAVE_MAIL_MSG": "％1$@给您发送了封邮件，标题为\\\"％2$@\\\""
+	}
+}
+
+```
+
+zh-Hant.json (Android 7 and above)
+```json
+{
+	"locale": {
+		"ios": ["zh-Hant"],
+		"android": ["b+zh+Hant", "b+zh+TW", "zh-rHK"]
+	},
+	"config_ios": {
+		"NSCameraUsageDescription": "掃描二維碼",
+		"CFBundleDisplayName": "應用程序名稱",
+		"CFBundleName": "應用程序名稱"
+	},
+	"config_android": {
+		"app_name": "應用程序名稱"
+	},
+	"app": {
+		"HAVE_MAIL_TITLE": "你收到了郵件",
+		"HAVE_MAIL_MSG": "％1$@給您發送了封郵件，標題為\\\"％2$@\\\""
+	}
+}
+```
+
 ## Dependencies
 
 This plugin relies on node-xcode >= 0.9.0, node >= 5.0.0, cordova >= 6.0.0.
